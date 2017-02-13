@@ -80,7 +80,7 @@
 
 #pragma mark - protocol
 
-- (NSArray *)snakePointsInSnakeView:(UIView *)sender
+- (NSArray *)snakePointsInSnakeView:(MKSnakeView *)inSnakeView
 {
     // 取得蛇的身體節點座標
     return snakeModel.snakePoints;
