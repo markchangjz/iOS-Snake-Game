@@ -59,10 +59,10 @@
     [self.view addGestureRecognizer:self.swipeRight];
     
     refreshTimer = [NSTimer scheduledTimerWithTimeInterval:0.2
-                                               target:self
-                                             selector:@selector(refreshGameView:)
-                                             userInfo:nil
-                                              repeats:YES];
+													target:self
+												  selector:@selector(refreshGameView:)
+												  userInfo:nil
+												   repeats:YES];
 }
 
 - (void)endGame

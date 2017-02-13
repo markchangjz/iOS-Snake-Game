@@ -114,7 +114,7 @@
 	
 	[snakeModel moveSnake];
 	
-	[self AssertPoint1:[snakeModel.snakePoints[0] snakePointValue] isEqualPoint2:MKMakePoint(12, snakeModel.AreaHeight - 1)];
+	[self AssertPoint1:[snakeModel.snakePoints[0] snakePointValue] isEqualPoint2:MKMakePoint(12, snakeModel.areaHeight - 1)];
 	[self AssertPoint1:[snakeModel.snakePoints[1] snakePointValue] isEqualPoint2:MKMakePoint(12, 0)];
 }
 
@@ -132,13 +132,13 @@
 	[self AssertPoint1:[snakeModel.snakePoints[1] snakePointValue] isEqualPoint2:MKMakePoint(12, 7)];
 	
 	// 測試蛇碰到邊界區域的移動
-	snakeModel.snakePoints = [[NSMutableArray alloc] initWithArray:@[[NSValue valueWithSnakePoint:MKMakePoint(12, snakeModel.AreaHeight - 1)],
-																	 [NSValue valueWithSnakePoint:MKMakePoint(12, snakeModel.AreaHeight - 2)]]];
+	snakeModel.snakePoints = [[NSMutableArray alloc] initWithArray:@[[NSValue valueWithSnakePoint:MKMakePoint(12, snakeModel.areaHeight - 1)],
+																	 [NSValue valueWithSnakePoint:MKMakePoint(12, snakeModel.areaHeight - 2)]]];
 	
 	[snakeModel moveSnake];
 	
 	[self AssertPoint1:[snakeModel.snakePoints[0] snakePointValue] isEqualPoint2:MKMakePoint(12, 0)];
-	[self AssertPoint1:[snakeModel.snakePoints[1] snakePointValue] isEqualPoint2:MKMakePoint(12, snakeModel.AreaHeight - 1)];
+	[self AssertPoint1:[snakeModel.snakePoints[1] snakePointValue] isEqualPoint2:MKMakePoint(12, snakeModel.areaHeight - 1)];
 }
 
 - (void)testMoveLeft
@@ -160,7 +160,7 @@
 	
 	[snakeModel moveSnake];
 	
-	[self AssertPoint1:[snakeModel.snakePoints[0] snakePointValue] isEqualPoint2:MKMakePoint(snakeModel.AreaWidth - 1, 7)];
+	[self AssertPoint1:[snakeModel.snakePoints[0] snakePointValue] isEqualPoint2:MKMakePoint(snakeModel.areaWidth - 1, 7)];
 	[self AssertPoint1:[snakeModel.snakePoints[1] snakePointValue] isEqualPoint2:MKMakePoint(0, 7)];
 }
 
@@ -178,13 +178,13 @@
 	[self AssertPoint1:[snakeModel.snakePoints[1] snakePointValue] isEqualPoint2:MKMakePoint(13, 7)];
 	
 	// 測試蛇碰到邊界區域的移動
-	snakeModel.snakePoints = [[NSMutableArray alloc] initWithArray:@[[NSValue valueWithSnakePoint:MKMakePoint(snakeModel.AreaWidth - 1, 7)],
-																	 [NSValue valueWithSnakePoint:MKMakePoint(snakeModel.AreaWidth - 2, 7)]]];
+	snakeModel.snakePoints = [[NSMutableArray alloc] initWithArray:@[[NSValue valueWithSnakePoint:MKMakePoint(snakeModel.areaWidth - 1, 7)],
+																	 [NSValue valueWithSnakePoint:MKMakePoint(snakeModel.areaWidth - 2, 7)]]];
 	
 	[snakeModel moveSnake];
 	
 	[self AssertPoint1:[snakeModel.snakePoints[0] snakePointValue] isEqualPoint2:MKMakePoint(0, 7)];
-	[self AssertPoint1:[snakeModel.snakePoints[1] snakePointValue] isEqualPoint2:MKMakePoint(snakeModel.AreaWidth - 1, 7)];
+	[self AssertPoint1:[snakeModel.snakePoints[1] snakePointValue] isEqualPoint2:MKMakePoint(snakeModel.areaWidth - 1, 7)];
 }
 
 @end

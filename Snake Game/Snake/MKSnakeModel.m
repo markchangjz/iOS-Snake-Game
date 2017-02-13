@@ -31,8 +31,8 @@ MKPoint MKMakePoint(int pointX, int pointY)
 {
     if (self = [super init]) {
         moveDirection = initDirection;
-        _AreaWidth = width;
-        _AreaHeight = height;
+        _areaWidth = width;
+        _areaHeight = height;
                 
         [self.snakePoints addObject:[NSValue valueWithSnakePoint:MKMakePoint(12, 7)]];
         [self.snakePoints addObject:[NSValue valueWithSnakePoint:MKMakePoint(13, 7)]];
@@ -46,29 +46,29 @@ MKPoint MKMakePoint(int pointX, int pointY)
 - (void)moveSnake
 {
     MKPoint snakeHeadPoint = [[self.snakePoints objectAtIndex:0] snakePointValue];
-    int nextSnakeHeadX = (int)snakeHeadPoint.x;
-    int nextSnakeHeadY = (int)snakeHeadPoint.y;
+    int nextSnakeHeadX = snakeHeadPoint.x;
+    int nextSnakeHeadY = snakeHeadPoint.y;
     
     [self.snakePoints removeLastObject];
     
     switch (moveDirection) {
         case directionUp:
             if (--nextSnakeHeadY < 0) {
-                nextSnakeHeadY = _AreaHeight - 1;
+                nextSnakeHeadY = self.areaHeight - 1;
             }
             break;
         case directionDown:
-            if (++nextSnakeHeadY >= _AreaHeight) {
+            if (++nextSnakeHeadY >= self.areaHeight) {
                 nextSnakeHeadY = 0;
             }
             break;
         case directionLeft:
             if (--nextSnakeHeadX < 0) {
-                nextSnakeHeadX = _AreaWidth - 1;
+                nextSnakeHeadX = self.areaWidth - 1;
             }
             break;
         case directionRight:
-            if (++nextSnakeHeadX >= _AreaWidth) {
+            if (++nextSnakeHeadX >= self.areaWidth) {
                 nextSnakeHeadX = 0;
             }
             break;
@@ -101,7 +101,7 @@ MKPoint MKMakePoint(int pointX, int pointY)
 
 - (BOOL)isHeadHitSnakeBody
 {
-    MKPoint firstSnakePoint = [[self.snakePoints objectAtIndex:0] snakePointValue];
+    MKPoint snakeHeadPoint = [[self.snakePoints objectAtIndex:0] snakePointValue];
     
     NSMutableArray *snakeBodyWithoutHead = [self.snakePoints mutableCopy];
     [snakeBodyWithoutHead removeObjectAtIndex:0];
@@ -110,7 +110,7 @@ MKPoint MKMakePoint(int pointX, int pointY)
         
         MKPoint p =  [v snakePointValue];
         
-        if (p.x == firstSnakePoint.x && p.y == firstSnakePoint.y) {
+        if (p.x == snakeHeadPoint.x && p.y == snakeHeadPoint.y) {
             return YES;
         }
     }
@@ -122,7 +122,7 @@ MKPoint MKMakePoint(int pointX, int pointY)
 {
     MKPoint snakeHeadPoint = [[self.snakePoints objectAtIndex:0] snakePointValue];
     
-    return (snakeHeadPoint.x == [self fruitPoint].x) && (snakeHeadPoint.y == [self fruitPoint].y);
+    return (snakeHeadPoint.x == self.fruitPoint.x) && (snakeHeadPoint.y == self.fruitPoint.y);
 }
 
 - (void)increaseSnakeBody
@@ -132,21 +132,21 @@ MKPoint MKMakePoint(int pointX, int pointY)
     
     int offsetX = snakeTailPoint.x - beforeSnakeTailPoint.x;
     int offsetY = snakeTailPoint.y - beforeSnakeTailPoint.y;
-    
-    // 補左
-    if ((offsetX == 1 && offsetY == 0) || (offsetX == -(_AreaWidth - 1) && offsetY == 0)) {
-        [self.snakePoints addObject:[NSValue valueWithSnakePoint:MKMakePoint(snakeTailPoint.x + 1, snakeTailPoint.y)]];
-    }
+	
     // 補右
-    else if ((offsetX == -1 && offsetY == 0) || (offsetX == _AreaWidth - 1 && offsetY == 0)) {
+    if ((offsetX == 1 && offsetY == 0) || (offsetX == -(self.areaWidth - 1) && offsetY == 0)) {
+        [self.snakePoints addObject:[NSValue valueWithSnakePoint:MKMakePoint(snakeTailPoint.x + 1, snakeTailPoint.y)]];		
+    }
+    // 補左
+    else if ((offsetX == -1 && offsetY == 0) || (offsetX == self.areaWidth - 1 && offsetY == 0)) {
         [self.snakePoints addObject:[NSValue valueWithSnakePoint:MKMakePoint(snakeTailPoint.x - 1, snakeTailPoint.y)]];
     }
     // 補上
-    else if ((offsetX == 0 && offsetY == -1) || (offsetX == 0 && offsetY == _AreaHeight - 1)) {
+    else if ((offsetX == 0 && offsetY == -1) || (offsetX == 0 && offsetY == self.areaHeight - 1)) {
         [self.snakePoints addObject:[NSValue valueWithSnakePoint:MKMakePoint(snakeTailPoint.x, snakeTailPoint.y - 1)]];
     }
     // 補下
-    else if ((offsetX == 0 && offsetY == 1) || (offsetX == 0 && offsetY == -(_AreaHeight - 1))) {
+    else if ((offsetX == 0 && offsetY == 1) || (offsetX == 0 && offsetY == -(self.areaHeight - 1))) {
         [self.snakePoints addObject:[NSValue valueWithSnakePoint:MKMakePoint(snakeTailPoint.x, snakeTailPoint.y + 1)]];
     }
 }
@@ -156,7 +156,7 @@ MKPoint MKMakePoint(int pointX, int pointY)
     BOOL isFruitInSnakeBody = YES;
     
     while (isFruitInSnakeBody) {
-        [self setFruitPoint:MKMakePoint(arc4random() % _AreaWidth, arc4random() % _AreaHeight)];
+        [self setFruitPoint:MKMakePoint(arc4random() % self.areaWidth, arc4random() % self.areaHeight)];
         
         for (NSValue *v in self.snakePoints) {
             

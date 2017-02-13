@@ -25,8 +25,8 @@ typedef enum {
 
 @property (retain, nonatomic) NSMutableArray *snakePoints;
 @property (assign, nonatomic) MKPoint fruitPoint;
-@property (assign, nonatomic) int AreaWidth;
-@property (assign, nonatomic) int AreaHeight;
+@property (assign, nonatomic) int areaWidth;
+@property (assign, nonatomic) int areaHeight;
 
 - (id)initWithMoveDirection:(MoveDirection)initDirection withAreaWidth:(int)width andAreaHeight:(int)height;
 - (void)moveSnake;
