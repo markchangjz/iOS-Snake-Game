@@ -14,7 +14,7 @@ typedef enum {
     directionRight
 } MoveDirection;
 
-@interface NSValue (PackageSnakePoint)
+@interface NSValue (PackageSnakePoint) // Data Transfer Objects
 
 + (NSValue *)valueWithSnakePoint:(MKPoint)snakePoint;
 - (MKPoint)snakePointValue;
@@ -31,7 +31,6 @@ typedef enum {
 - (id)initWithMoveDirection:(MoveDirection)initDirection withAreaWidth:(int)width andAreaHeight:(int)height;
 - (void)moveSnake;
 - (void)changeMoveDirection:(MoveDirection)newDirection;
-
 - (BOOL)isHeadHitSnakeBody;
 - (BOOL)isSnakeEatFruit;
 - (void)increaseSnakeBody;

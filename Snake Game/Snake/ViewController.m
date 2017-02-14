@@ -103,11 +103,11 @@
 {
     [snakeModel moveSnake];
     
-    if ([snakeModel isHeadHitSnakeBody]) {
+    if (snakeModel.isHeadHitSnakeBody) {
         [self endGame];
     }
     
-    if ([snakeModel isSnakeEatFruit]) {
+    if (snakeModel.isSnakeEatFruit) {
         [snakeModel increaseSnakeBody];
         [snakeModel putFruit];
     }
