@@ -42,6 +42,12 @@
 
 - (void)testHitSnakeBody
 {
+	/*
+	 ⏹⏹
+	 ⏹⏹
+	   ⏹
+	 */
+	
 	MKPoint snakePoint1 = MKMakePoint(0, 1);
 	MKPoint snakePoint2 = MKMakePoint(0, 0);
 	MKPoint snakePoint3 = MKMakePoint(1, 0);
@@ -56,7 +62,6 @@
 												  [NSValue valueWithSnakePoint:snakePoint3],
 												  [NSValue valueWithSnakePoint:snakePoint4],
 												  [NSValue valueWithSnakePoint:snakePoint5]]];
-	
 	
 	XCTAssertFalse([snakeModel isHeadHitSnakeBody], @"尚未撞到身體");
 	
@@ -79,6 +84,10 @@
 												  [NSValue valueWithSnakePoint:snakePoint2]]];
 	
 	[snakeModel setFruitPoint:(MKPoint) {.x = 11, .y = 7}];
+	
+	/*
+	 🍎⏹⏹
+	 */
 	
 	[snakeModel moveSnake];
 	

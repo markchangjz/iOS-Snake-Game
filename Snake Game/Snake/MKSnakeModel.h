@@ -23,10 +23,10 @@ typedef enum {
 
 @interface MKSnakeModel : NSObject
 
-@property (retain, nonatomic) NSMutableArray *snakePoints;
-@property (assign, nonatomic) MKPoint fruitPoint;
-@property (assign, nonatomic) int areaWidth;
-@property (assign, nonatomic) int areaHeight;
+@property (nonatomic) NSMutableArray *snakePoints;
+@property (nonatomic) MKPoint fruitPoint;
+@property (nonatomic) int areaWidth;
+@property (nonatomic) int areaHeight;
 
 - (id)initWithMoveDirection:(MoveDirection)initDirection withAreaWidth:(int)width andAreaHeight:(int)height;
 - (void)moveSnake;

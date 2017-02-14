@@ -12,6 +12,6 @@
 
 @interface MKSnakeView : UIView
 
-@property (assign, nonatomic) id <MKSnakeViewDataSource> dataSource;
+@property (nonatomic, weak) id <MKSnakeViewDataSource> dataSource;
 
 @end
