@@ -1,8 +1,8 @@
-#import "ViewController.h"
+#import "MKViewController.h"
 #import "MKSnakeView.h"
 #import "MKSnakeModel.h"
 
-@interface ViewController () <MKSnakeViewDataSource> {
+@interface MKViewController () <MKSnakeViewDataSource> {
     MKSnakeModel *snakeModel;
     NSTimer *refreshTimer;
 }
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation ViewController
+@implementation MKViewController
 
 - (void)didReceiveMemoryWarning
 {

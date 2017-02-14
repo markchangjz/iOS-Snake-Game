@@ -13,7 +13,7 @@
 		0DE4723E1E4F528E006D5091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DE4723D1E4F528E006D5091 /* Assets.xcassets */; };
 		0DE472411E4F528E006D5091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE4723F1E4F528E006D5091 /* LaunchScreen.storyboard */; };
 		0DE4724C1E4F528E006D5091 /* SnakeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4724B1E4F528E006D5091 /* SnakeTests.m */; };
-		0DE4726A1E4F52F7006D5091 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE472651E4F52F7006D5091 /* ViewController.m */; };
+		0DE4726A1E4F52F7006D5091 /* MKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE472651E4F52F7006D5091 /* MKViewController.m */; };
 		0DE4726B1E4F52F7006D5091 /* MKSnakeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE472671E4F52F7006D5091 /* MKSnakeModel.m */; };
 		0DE4726C1E4F52F7006D5091 /* MKSnakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DE472691E4F52F7006D5091 /* MKSnakeView.m */; };
 /* End PBXBuildFile section */
@@ -40,8 +40,8 @@
 		0DE472471E4F528E006D5091 /* SnakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE4724B1E4F528E006D5091 /* SnakeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnakeTests.m; sourceTree = "<group>"; };
 		0DE4724D1E4F528E006D5091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DE472641E4F52F7006D5091 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0DE472651E4F52F7006D5091 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0DE472641E4F52F7006D5091 /* MKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKViewController.h; sourceTree = "<group>"; };
+		0DE472651E4F52F7006D5091 /* MKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKViewController.m; sourceTree = "<group>"; };
 		0DE472661E4F52F7006D5091 /* MKSnakeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSnakeModel.h; sourceTree = "<group>"; };
 		0DE472671E4F52F7006D5091 /* MKSnakeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSnakeModel.m; sourceTree = "<group>"; };
 		0DE472681E4F52F7006D5091 /* MKSnakeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSnakeView.h; sourceTree = "<group>"; };
@@ -89,8 +89,8 @@
 			children = (
 				0DE472341E4F528E006D5091 /* AppDelegate.h */,
 				0DE472351E4F528E006D5091 /* AppDelegate.m */,
-				0DE472641E4F52F7006D5091 /* ViewController.h */,
-				0DE472651E4F52F7006D5091 /* ViewController.m */,
+				0DE472641E4F52F7006D5091 /* MKViewController.h */,
+				0DE472651E4F52F7006D5091 /* MKViewController.m */,
 				0DE472661E4F52F7006D5091 /* MKSnakeModel.h */,
 				0DE472671E4F52F7006D5091 /* MKSnakeModel.m */,
 				0DE472681E4F52F7006D5091 /* MKSnakeView.h */,
@@ -226,7 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DE4726B1E4F52F7006D5091 /* MKSnakeModel.m in Sources */,
-				0DE4726A1E4F52F7006D5091 /* ViewController.m in Sources */,
+				0DE4726A1E4F52F7006D5091 /* MKViewController.m in Sources */,
 				0DE472361E4F528E006D5091 /* AppDelegate.m in Sources */,
 				0DE4726C1E4F52F7006D5091 /* MKSnakeView.m in Sources */,
 				0DE472331E4F528E006D5091 /* main.m in Sources */,
@@ -428,6 +428,7 @@
 				0DE4725D1E4F528E006D5091 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0DE4725E1E4F528E006D5091 /* Build configuration list for PBXNativeTarget "SnakeTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +437,7 @@
 				0DE472601E4F528E006D5091 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
