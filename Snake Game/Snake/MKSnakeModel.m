@@ -76,7 +76,8 @@ MKPoint MKMakePoint(int pointX, int pointY)
             break;
     }
 
-    [self.snakePoints insertObject:[NSValue valueWithSnakePoint:MKMakePoint(nextSnakeHeadX, nextSnakeHeadY)]
+	MKPoint nextSankeHeadPoint = MKMakePoint(nextSnakeHeadX, nextSnakeHeadY);
+    [self.snakePoints insertObject:[NSValue valueWithSnakePoint:nextSankeHeadPoint]
                            atIndex:0];
 }
 
